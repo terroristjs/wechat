@@ -20,7 +20,7 @@ export default {
 
 <style lang="less" scoped>
 .container {
-  margin-top: 50px;
+  margin-top: 49px;
   margin-bottom: 60px;
   width: 100%;
 }

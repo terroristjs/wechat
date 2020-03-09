@@ -37,7 +37,7 @@ export default {
 <style lang="less" scoped>
 .container{
   overflow: hidden;
-  margin-top: 50px;
+  margin-top: 49px;
   margin-bottom: 60px;
   .mint-cell {
     padding: 10px;

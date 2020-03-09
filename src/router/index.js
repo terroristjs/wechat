@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Weixin from '../views/Weixin.vue'
-import Concact from '../views/Concact.vue'
-import Find from '../views/Discover.vue'
-import Me from '../views/Me.vue'
-import Login from '../components/Login.vue'
-import Setting from '../components/Setting.vue'
-import Chat from '../components/Chat.vue'
+const Concact = () => import('../views/Concact.vue')
+const Discover = () => import('../views/Discover.vue')
+const Me = () => import('../views/Me.vue')
+const Chat = () => import('../components/Chat.vue')
+const Login = () => import('../components/Login.vue')
+const Setting = () => import('../components/Setting.vue')
 Vue.use(VueRouter)
 
 const routes = [
@@ -26,9 +26,9 @@ const routes = [
     component: Concact
   },
   {
-    path: '/find',
-    name: 'find',
-    component: Find
+    path: '/discover',
+    name: 'discover',
+    component: Discover
   },
   {
     path: '/me',

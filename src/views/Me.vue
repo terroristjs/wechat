@@ -1,15 +1,12 @@
 <template>
 <div class="container">
-  <mt-button icon="success"></mt-button>
-  <img class="head" src="../assets/ic_emoji.png" >
-  <div class="name">明明</div>
-  <div class="rapper">微信号:
-    <label class="id">terroristjs</label>
-    <img src="../assets/ic_qr_code.png">
-  </div>
-  <mt-cell v-for="item in list" :key= item.id :title= item.title is-link :to= item.path>
-    <img slot="icon" :src= item.src width="30" height="30">
-  </mt-cell>
+  <div class="iconfont icon-photobzhaoxiang photo"></div>
+  <cell class="header" title="明明" content="微信号: terroristjs" to="/">
+    <img src="../assets/ic_emoji.png" >
+  </cell>
+  <cell isBorder="true" class="main" v-for="item in list" :key= item.id :title= item.title  :to= item.path>
+    <img :src= item.src class="main-img">
+  </cell>
 </div>
 </template>
 
@@ -32,39 +29,25 @@ export default {
 </script>
 <style lang="less" scoped>
 .container {
-  .rapper {
-    color: rgb(165, 165, 165);
-    margin-bottom: 35px;
-    img {
-      padding-left: 110px;
-      width: 20px;
-      height: 20px;
-      position: relative;
-      top: 5px;
-    }
-    .id {
-      margin-left: 20px;
-    }
-  }
-  .head {
-    margin: 5px 10px 5px 10px;
-    float: left;
-  }
-  .name {
-    margin: 15px 0 5px 100px;
-    font-size: 22px;
-  }
-  .mint-button {
-    background: #fff;
-    left: 350px;
-    top: 10px;
-    display: block;
-  }
-}
-.mint-cell {
-  padding: 6px;
-  img {
+  .photo {
+    line-height: 49px;
+    background-color: #ffffff;
+    text-align: end;
     padding-right: 15px;
   }
+  .header {
+    height: 90px;
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  .main {
+    height: 60px;
+    .main-img {
+      width: 35px;
+      height: 35px;
+    }
+ }
 }
 </style>
