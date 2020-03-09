@@ -35,16 +35,16 @@ export default {
     align-items: center;
     padding: 16px;
   }
-  .border {
+  .right {
+    &.border {
       border-bottom: 1px solid #ddd;
       }
-  .right {
     color: #ccc;
     display: flex;
     flex-direction: column;
     padding-right: 20px;
     justify-content: center;
-    height: 70px;
+    height: 100%;
     font-size: 12px;
     flex: 1;
     overflow: hidden;
