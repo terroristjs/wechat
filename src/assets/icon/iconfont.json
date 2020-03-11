@@ -1,10 +1,17 @@
 {
   "id": "1641481",
-  "name": "no name",
+  "name": "weixin",
   "font_family": "iconfont",
   "css_prefix_text": "icon-",
   "description": "",
   "glyphs": [
+    {
+      "icon_id": "11487977",
+      "name": "arrow-right",
+      "font_class": "arrow-right",
+      "unicode": "e743",
+      "unicode_decimal": 59203
+    },
     {
       "icon_id": "792301",
       "name": "photo-b-照相",

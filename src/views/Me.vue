@@ -4,7 +4,8 @@
   <cell class="header" title="明明" content="微信号: terroristjs" to="/">
     <img src="../assets/ic_emoji.png" >
   </cell>
-  <cell isBorder="true" class="main" v-for="item in list" :key= item.id :title= item.title  :to= item.path>
+  <cell isBorder="true" class="main" v-for="item in list" :key= item.id
+  up_icon="iconfont icon-arrow-right" :title= item.title  :to= item.path>
     <img :src= item.src class="main-img">
   </cell>
 </div>

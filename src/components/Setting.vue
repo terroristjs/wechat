@@ -1,14 +1,19 @@
 <template>
   <div class="container">
-    <mt-cell v-for="item in list" :key= item.id :title= item.title is-link></mt-cell>
+    <cell v-for="item in list" isBorder="true" :key= item.id :title= item.title to="/" up_icon="iconfont icon-arrow-right"></cell>
     <mt-button type="default" size="large" @click.native= logout>切换账号</mt-button>
     <mt-button type="default" size="large" @click.native= 'sheetVisible = true'>退出</mt-button>
-    <mt-actionsheet :actions="sheetlist" v-model="sheetVisible"></mt-actionsheet>
+    <!-- <mt-actionsheet :actions="sheetlist" v-model="sheetVisible"></mt-actionsheet> -->
+    <sheet :list="sheetlist" :show="sheetVisible"></sheet>
   </div>
 </template>
 
 <script>
+import Sheet from '../lib/Sheet'
 export default {
+  components: {
+    Sheet
+  },
   data () {
     return {
       sheetVisible: false,
@@ -39,7 +44,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.mint-cell {
-  margin-bottom: 5px;
+.container {
+  height: 100%;
+}
+.cell {
+  height: 55px;
+  margin-left: -16px;
 }
 </style>

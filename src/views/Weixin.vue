@@ -1,10 +1,9 @@
 <template>
   <div class="container">
-    <mt-cell v-for="item in list" :key= item.id :title= item.title :label= item.content is-link
-    :to= "{ name: 'chat', query: { id: item.title }}">
-    <span>下午5:50</span>
-    <img slot="icon" :src= item.src width="44" height="44">
-  </mt-cell>
+  <cell class="cell" v-for="item in list" :key="item.id" :title= item.title :content=item.content
+  to="{ name: 'chat', query: { id: item.title }}" isBorder="true" time="13:14" tag="^ ^">
+      <img :src= item.src>
+    </cell>
   </div>
 </template>
 
@@ -36,20 +35,13 @@ export default {
 
 <style lang="less" scoped>
 .container{
-  overflow: hidden;
   margin-top: 49px;
   margin-bottom: 60px;
-  .mint-cell {
-    padding: 10px;
-   img {
+  .cell {
+    img {
      border-radius: 12%;
-     float: left;
-     margin-right: 8px;
-     margin-top: -5px;
-   }
-    span {
-     font-size: 12px;
-     padding-bottom: 20px;
+     width: 50px;
+     height: 50px;
     }
   }
 }

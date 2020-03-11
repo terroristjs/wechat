@@ -1,20 +1,24 @@
 <template>
 <div class="container">
-  <mt-cell title="朋友圈" is-link>
-    <img slot="icon" src="../assets/ic_friends_circle.png" width="30" height="30">
-  </mt-cell>
-  <mt-cell title="扫一扫" is-link>
-    <img slot="icon" src="../assets/ic_scan.png" width="30" height="30">
-  </mt-cell>
-  <mt-cell title="小程序" is-link>
-    <img slot="icon" src="../assets/ic_program.png" width="30" height="30">
-  </mt-cell>
+  <cell class="cell" title="朋友圈" to='/frind' up_icon="iconfont icon-arrow-right">
+    <img src="../assets/ic_friends_circle.png">
+  </cell>
+  <cell class="cell" title="扫一扫" to='/frind' up_icon="iconfont icon-arrow-right">
+    <img src="../assets/ic_scan.png">
+  </cell>
+  <cell class="cell" title="小程序" to='/frind' up_icon="iconfont icon-arrow-right">
+    <img src="../assets/ic_program.png">
+  </cell>
 </div>
 </template>
 
 <script>
 export default {
-
+  data () {
+    return {
+      icon: '<i class="iconfont icon-arrow-right">'
+    }
+  }
 }
 </script>
 
@@ -24,14 +28,12 @@ export default {
   margin-bottom: 60px;
   width: 100%;
 }
-.mint-cell {
+.cell {
+  height: 60px;
   border-bottom: 10px solid rgb(238, 238, 238);
 }
 img {
-  padding: 8px;
+  width: 30px;
+  height: 30px;
 }
-span {
-     font-size: 12px;
-     padding-bottom: 20px;
-  }
 </style>

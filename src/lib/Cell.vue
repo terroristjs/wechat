@@ -6,11 +6,11 @@
   <div class="right" :class="{border:isBorder}">
     <div class="up">
       <div class="title" v-text=title></div>
-      <div class="time" v-text=time></div>
+      <div class="time" v-text=time :class="up_icon"></div>
     </div>
     <div class="down">
       <div class="content" v-text=content></div>
-      <div class="tag" v-text=tag></div>
+      <div class="tag" v-text=tag :class="down_icon"></div>
     </div>
   </div>
 </router-link>
@@ -19,25 +19,24 @@
 <script>
 export default {
   name: 'Cell',
-  props: ['title', 'content', 'time', 'tag', 'to', 'isBorder']
+  props: ['title', 'content', 'time', 'tag', 'to', 'isBorder', 'up_icon', 'down_icon']
 }
 </script>
 <style lang="less" scoped>
 .cell {
   background-color: #fff;
   height: 70px;
-  width: 100%;
   display: flex;
   align-items: center;
   .left {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 16px;
+    margin: 16px;
   }
   .right {
     &.border {
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid rgba(209, 209, 209, 0.384);
       }
     color: #ccc;
     display: flex;

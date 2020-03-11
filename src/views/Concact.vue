@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <mt-cell v-for="item in list" :key= item.id :title= item.title is-link>
-    <img slot="icon" :src= item.src width="44" height="44">
-  </mt-cell>
+    <cell class="cell" v-for="item in list" :key="item.id" :title= item.title to="/chat" isBorder="true">
+      <img :src= item.src>
+    </cell>
   </div>
 </template>
 
@@ -34,15 +34,15 @@ export default {
 
 <style lang="less" scoped>
 .container {
-  overflow: hidden;
-  margin-top: 49px;
-  margin-bottom: 60px;
-  .mint-cell {
-    padding: 6px;
-   img {
+  padding-top: 49px;
+  padding-bottom: 60px;
+  .cell {
+    height: 60px;
+    img {
      border-radius: 12%;
-     margin: 10px 15px 0px 5px;
-   }
- }
+     width: 45px;
+     height: 45px;
+    }
+  }
 }
 </style>
