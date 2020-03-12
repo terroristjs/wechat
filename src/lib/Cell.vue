@@ -41,7 +41,7 @@ export default {
     color: #ccc;
     display: flex;
     flex-direction: column;
-    padding-right: 20px;
+    padding-right: 10px;
     justify-content: center;
     height: 100%;
     font-size: 12px;

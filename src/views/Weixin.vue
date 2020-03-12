@@ -38,6 +38,7 @@ export default {
   margin-top: 49px;
   margin-bottom: 60px;
   .cell {
+     padding-right: 8px;
     img {
      border-radius: 12%;
      width: 50px;
