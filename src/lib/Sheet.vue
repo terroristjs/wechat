@@ -1,15 +1,25 @@
 <template>
-  <div v-show="show" class="container">
+  <div v-show="show" class="container" @click="show=false">
     <div class="footer">
       <div class="sheetlist" v-for="item in list" :key="item.name" v-text="item.name" @click="item.method"></div>
-      <div class="cancel">取消</div>
+      <div class="cancel" @click="show=false">取消</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['list', 'show']
+  props: ['list', 'value'],
+  data () {
+    return {
+      show: false
+    }
+  },
+  watch: {
+    value () {
+      this.show = true
+    }
+  }
 }
 </script>
 

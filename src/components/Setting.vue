@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <cell v-for="item in list" isBorder="true" :key= item.id :title= item.title to="/" up_icon="iconfont icon-arrow-right"></cell>
-    <mt-button type="default" size="large" @click.native= logout>切换账号</mt-button>
-    <mt-button type="default" size="large" @click.native= 'sheetVisible = true'>退出</mt-button>
+    <div class="exit" @click= logout>切换账号</div>
+    <div class="exit" @click="sheetVisible = !sheetVisible">退出</div>
     <!-- <mt-actionsheet :actions="sheetlist" v-model="sheetVisible"></mt-actionsheet> -->
-    <sheet :list="sheetlist" :show="sheetVisible"></sheet>
+    <sheet :list="sheetlist" :value="sheetVisible"></sheet>
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
       sheetVisible: false,
       sheetlist: [
         { name: '退出登录', method: this.logout },
-        { name: '关闭微信', method: this.logout }
+        { name: '关闭微信', method: this.close }
       ],
       list: [
         { id: 1, title: '账号与安全', path: '/safty' },
@@ -38,6 +38,9 @@ export default {
   methods: {
     logout () {
       this.$router.push('/login')
+    },
+    close () {
+      location.href = 'about:blank'
     }
   }
 }
@@ -46,9 +49,16 @@ export default {
 <style lang="less" scoped>
 .container {
   height: 100%;
-}
-.cell {
-  height: 55px;
-  margin-left: -16px;
+  .exit {
+    line-height: 55px;
+    border-top: 8px solid rgb(238, 238, 238);
+    background-color: #fff;
+    font-size: 20px;
+    text-align: center;
+  }
+  .cell {
+    height: 53px;
+    margin-left: -16px;
+  }
 }
 </style>
