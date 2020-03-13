@@ -58,6 +58,9 @@ export default {
     .down {
       display: flex;
       justify-content: space-between;
+      .tag {
+        font-size: 12px;
+      }
     }
   }
 }

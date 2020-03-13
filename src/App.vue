@@ -3,7 +3,7 @@
     <navbar v-show= isShow>
       <span slot="left">{{ title }}</span>
       <i slot="right" class="iconfont icon-icon-test"></i>
-      <i slot="right" class="iconfont icon-add"></i>
+      <i slot="right" class="iconfont icon-addto"></i>
     </navbar>
     <div class="main">
         <keep-alive>

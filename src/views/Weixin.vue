@@ -1,7 +1,8 @@
 <template>
   <div class="container">
   <cell class="cell" v-for="item in list" :key="item.id" :title= item.title :content=item.content
-  to="{ name: 'chat', query: { id: item.title }}" isBorder="true" time="13:14" tag="^ ^">
+  to="{ name: 'chat', query: { id: item.title }}" isBorder="true" time="13:14"
+  down_icon="iconfont icon-Sound-Off">
       <img :src= item.src>
     </cell>
   </div>
