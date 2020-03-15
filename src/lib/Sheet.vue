@@ -1,9 +1,11 @@
 <template>
   <div v-show="show" class="container" @click="show=false">
-    <div class="footer">
-      <div class="sheetlist" v-for="item in list" :key="item.name" v-text="item.name" @click="item.method"></div>
-      <div class="cancel" @click="show=false">取消</div>
-    </div>
+    <transition name="footer">
+      <div class="footer" v-show="show">
+        <div class="sheetlist" v-for="item in list" :key="item.name" v-text="item.name" @click="item.method"></div>
+        <div class="cancel" @click="show=false">取消</div>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -24,14 +26,23 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.footer-enter-active,
+.footer-leave-active {
+  transition: all 0.3s ease;
+}
+.footer-enter,
+.footer-leave-to {
+  transform: translateY(100%);
+}
 .container {
   text-align: center;
   top: 0;
-  background-color: rgba(143, 143, 143, 0.3);
+  background-color: rgba(59, 59, 59, 0.6);
   position: fixed;
   height: 100%;
   width: 100%;
   .footer {
+    border-radius: 10px;
     width: 100%;
     position: fixed;
     bottom: 0;

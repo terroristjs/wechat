@@ -3,7 +3,6 @@
     <cell v-for="item in list" isBorder="true" :key= item.id :title= item.title to="/" up_icon="iconfont icon-arrow-right"></cell>
     <div class="exit" @click= logout>切换账号</div>
     <div class="exit" @click="sheetVisible = !sheetVisible">退出</div>
-    <!-- <mt-actionsheet :actions="sheetlist" v-model="sheetVisible"></mt-actionsheet> -->
     <sheet :list="sheetlist" :value="sheetVisible"></sheet>
   </div>
 </template>

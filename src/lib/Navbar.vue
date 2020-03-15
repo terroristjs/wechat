@@ -1,5 +1,5 @@
 <template>
-  <div id="navbar">
+  <div class="navbar">
     <div class="left">
         <slot name="left"></slot>
     </div>
@@ -18,7 +18,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-#navbar {
+.navbar {
   z-index: 10;
   height: 49px;
   width: 100%;
@@ -28,10 +28,9 @@ export default {
   align-items: center;
   top: 0;
   .left {
-    :first-child {
+    display: flex;
     margin-left: 18px;
     font-size: 18px;
-  }
   }
   .mid {
       flex: 1;

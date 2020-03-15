@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <cell class="cell" v-for="item in list" :key="item.id" :title= item.title to="/chat" isBorder="true">
+    <cell class="cell" v-for="item in list" :key="item.id" :title= item.title :to="{ name: 'chat', params: { id: item.title }}" isBorder="true">
       <img :src= item.src>
     </cell>
   </div>
