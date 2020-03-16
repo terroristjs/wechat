@@ -36,8 +36,8 @@ export default {
 
 <style lang="less" scoped>
 .container{
-  margin-top: 49px;
-  margin-bottom: 60px;
+  padding-top: 49px;
+  padding-bottom: 60px;
   .cell {
      padding-right: 8px;
     img {

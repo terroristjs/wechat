@@ -55,8 +55,5 @@ export default {
 .container {
   height: 100%;
   background-color: rgb(238, 238, 238);
-  .main {
-    overflow: hidden;
-  }
 }
 </style>

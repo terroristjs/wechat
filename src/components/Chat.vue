@@ -51,10 +51,10 @@ export default {
       this.messageList.push(this.message)
       // setTimeout(() => {
       //   this.$refs.main.scrollTop = this.$refs.main.scrollHeight
-      //   console.log(this.$refs.main.scrollTop)
       // }, 1)
       this.$nextTick(() => {
         this.$refs.main.scrollTop = this.$refs.main.scrollHeight
+        console.log(this)
       })
     }
   }
@@ -84,11 +84,7 @@ export default {
     }
   }
   .main {
-    height: 100%;
     background-color: rgb(238, 238, 238);
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
     .cell {
       margin: 2px;
       height: 53px;
@@ -108,9 +104,10 @@ export default {
     }
   }
   .footer {
-    background: rgb(247, 247, 247);
     position: fixed;
-    bottom: 0px;
+    bottom: 0;
+    width: 100%;
+    background: rgb(247, 247, 247);
     .more {
       height: 230px;
       display: flex;
