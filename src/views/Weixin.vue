@@ -36,6 +36,8 @@ export default {
 
 <style lang="less" scoped>
 .container{
+  height: 100%;
+  overflow: scroll;
   padding-top: 49px;
   padding-bottom: 60px;
   .cell {

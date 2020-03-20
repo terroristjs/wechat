@@ -35,6 +35,9 @@ export default {
     background-color: #ffffff;
     text-align: end;
     padding-right: 15px;
+    input {
+      opacity: 0
+    }
   }
   .header {
     height: 90px;

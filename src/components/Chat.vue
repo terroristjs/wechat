@@ -15,11 +15,10 @@
     <div class="tab">
       <i :class="{ 'iconfont icon-icon-test2':swich, 'iconfont icon-icon-test1':!swich }" @click="swich=!swich"></i>
       <input type="text" v-model="message" @focus="showMore=false"/>
-      <i class="iconfont icon-smile_line" @click="showMore=!showMore"></i>
-      <i v-show="message==''" class="add iconfont icon-addto" @click="showMore=!showMore"></i>
+      <i class="iconfont icon-smile_line" @click="show"></i>
+      <i v-show="message==''" class="add iconfont icon-addto" @click="show"></i>
       <button v-show="message!==''" class="send" :disabled="message==''" @mousedown.prevent="send">发送</button>
     </div>
-    <transition name="more">
     <div class="more" v-show="showMore">
       <span class="iconfont icon-smile_line"></span>
       <span class="iconfont icon-smile_line"></span>
@@ -30,7 +29,6 @@
       <span class="iconfont icon-smile_line"></span>
       <span class="iconfont icon-smile_line"></span>
     </div>
-    </transition>
   </div>
 </div>
 </template>
@@ -49,31 +47,20 @@ export default {
   methods: {
     send () {
       this.messageList.push(this.message)
-      // setTimeout(() => {
-      //   this.$refs.main.scrollTop = this.$refs.main.scrollHeight
-      // }, 1)
       this.$nextTick(() => {
         this.$refs.main.scrollTop = this.$refs.main.scrollHeight
-        console.log(this)
       })
+    },
+    show () {
+      setTimeout(() => {
+        this.showMore = !this.showMore
+      }, 100)
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
-.chat-enter-active,.more-enter-active,.more-leave-active,
-.chat-leave-active {
-  transition: all 0.2s ease;
-}
-.chat-enter,
-.chat-leave-to {
-  transform: translateX(100%);
-}
-.more-enter,
-.more-leave-to {
-  transform: translateY(100%);
-}
 .container {
   padding-top: 50px;
   padding-bottom: 60px;
@@ -84,6 +71,8 @@ export default {
     }
   }
   .main {
+    height: 100%;
+    overflow: scroll;
     background-color: rgb(238, 238, 238);
     .cell {
       margin: 2px;
